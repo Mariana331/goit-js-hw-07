@@ -25,13 +25,12 @@ const images = [
   },
 ];
 
-
-function imageTemlate(image) {
+function imageTemplate(image) {
   return `<li><img src="${image.url}" alt="${image.alt}" width="360"></li>`;
 }
-function imagesTempate(images) {
-  return images.map(imageTemlate).join(`\n`);
+function imagesTemplate(images) {
+  return images.map(imageTemplate).join(`\n`);
 }
-const imageMarcup = imagesTempate(images);
+const imageMarkup = imagesTemplate(images);
 const ulElem = document.querySelector(`ul`);
-ulElem.insertAdjacentHTML(`beforeend`, imageMarcup);
+ulElem.insertAdjacentHTML(`beforeend`, imageMarkup);
