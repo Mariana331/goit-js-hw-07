@@ -2,12 +2,18 @@ const form = document.querySelector(`.js-form`);
 
 form.addEventListener(`submit`, event => {
   event.preventDefault();
-  const form = event.target;
-  const email = form.elements.email.value.trim();
-  const password = form.elements.password.value.trim();
+
+  const email = event.target.elements.email.value.trim();
+  const password = event.target.elements.password.value.trim();
+
   if (email === `` || password === ``) {
     alert(`All form fields must be filled in`);
   }
-  console.log(`Email: ${email}, Password: ${password}`);
+
+  const data = {
+    userEmail: email,
+    userPassword: password,
+  };
+  console.log(data);
   form.reset();
 });
